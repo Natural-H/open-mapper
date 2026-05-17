@@ -1,30 +1,42 @@
-import { useState } from "react";
-import { Link } from "react-router";
-import { Search, Filter } from "lucide-react";
-import { programs, categories } from "../data/programs";
+import { useState } from 'react'
+import { Link } from 'react-router'
+import { Search, Filter } from 'lucide-react'
+import { programs, categories } from '../data/programs'
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('all')
 
   const filteredPrograms = programs.filter((program) => {
     const matchesSearch =
       program.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       program.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (program.alternatives && program.alternatives.some((altId) => {
-        const altProgram = programs.find((p) => p.id === altId);
-        return altProgram?.name.toLowerCase().includes(searchQuery.toLowerCase());
-      }));
+      (program.alternatives &&
+        program.alternatives.some((altId) => {
+          const altProgram = programs.find((p) => p.id === altId)
+          return altProgram?.name
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase())
+        }))
 
     const matchesCategory =
-      selectedCategory === "all" || program.category === selectedCategory;
+      selectedCategory === 'all' || program.category === selectedCategory
 
-    return matchesSearch && matchesCategory && !program.isProprietary;
-  });
+    return matchesSearch && matchesCategory && !program.isProprietary
+  })
 
   const popularPrograms = programs.filter(
-    (p) => !p.isProprietary && ["davinci-resolve", "gimp", "audacity", "vscode", "canva", "inkscape"].includes(p.id)
-  );
+    (p) =>
+      !p.isProprietary &&
+      [
+        'davinci-resolve',
+        'gimp',
+        'audacity',
+        'vscode',
+        'canva',
+        'inkscape'
+      ].includes(p.id)
+  )
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -58,8 +70,8 @@ export default function Home() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category.id
-                    ? "bg-indigo-600 text-white"
-                    : "bg-white text-gray-700 hover:bg-indigo-50"
+                    ? 'bg-indigo-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-indigo-50'
                 }`}
               >
                 {category.name}
@@ -68,7 +80,7 @@ export default function Home() {
           </div>
         </div>
 
-        {searchQuery === "" && selectedCategory === "all" && (
+        {searchQuery === '' && selectedCategory === 'all' && (
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
               Programas Populares
@@ -83,9 +95,9 @@ export default function Home() {
 
         <div>
           <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            {searchQuery || selectedCategory !== "all"
-              ? "Resultados de búsqueda"
-              : "Todos los programas"}
+            {searchQuery || selectedCategory !== 'all'
+              ? 'Resultados de búsqueda'
+              : 'Todos los programas'}
           </h2>
           {filteredPrograms.length === 0 ? (
             <div className="text-center py-12">
@@ -103,11 +115,11 @@ export default function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }
 
-function ProgramCard({ program }: { program: typeof programs[0] }) {
-  const categoryName = categories.find((c) => c.id === program.category)?.name;
+function ProgramCard({ program }: { program: (typeof programs)[0] }) {
+  const categoryName = categories.find((c) => c.id === program.category)?.name
 
   return (
     <Link
@@ -142,5 +154,5 @@ function ProgramCard({ program }: { program: typeof programs[0] }) {
         <p className="text-xs text-gray-500 mt-3">Por {program.developer}</p>
       </div>
     </Link>
-  );
+  )
 }

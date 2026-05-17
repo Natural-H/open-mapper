@@ -1,10 +1,10 @@
-import { Link, useParams } from "react-router";
-import { ArrowLeft, ExternalLink, BookOpen, Download } from "lucide-react";
-import { programs, categories } from "../data/programs";
+import { Link, useParams } from 'react-router'
+import { ArrowLeft, ExternalLink, BookOpen, Download } from 'lucide-react'
+import { programs, categories } from '../data/programs'
 
 export default function ProgramDetail() {
-  const { id } = useParams<{ id: string }>();
-  const program = programs.find((p) => p.id === id);
+  const { id } = useParams<{ id: string }>()
+  const program = programs.find((p) => p.id === id)
 
   if (!program) {
     return (
@@ -21,13 +21,13 @@ export default function ProgramDetail() {
           </Link>
         </div>
       </div>
-    );
+    )
   }
 
-  const categoryName = categories.find((c) => c.id === program.category)?.name;
+  const categoryName = categories.find((c) => c.id === program.category)?.name
   const alternativePrograms = program.alternatives
     ? programs.filter((p) => program.alternatives?.includes(p.id))
-    : [];
+    : []
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -56,7 +56,7 @@ export default function ProgramDetail() {
                   {program.name}
                 </h2>
                 <p className="text-gray-600">
-                  Desarrollado por{" "}
+                  Desarrollado por{' '}
                   <span className="font-medium text-gray-800">
                     {program.developer}
                   </span>
@@ -148,5 +148,5 @@ export default function ProgramDetail() {
         </div>
       </main>
     </div>
-  );
+  )
 }

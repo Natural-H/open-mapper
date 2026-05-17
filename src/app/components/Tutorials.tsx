@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { Link, useParams } from "react-router";
-import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
-import { programs } from "../data/programs";
+import { useState } from 'react'
+import { Link, useParams } from 'react-router'
+import { ArrowLeft, BookOpen, CheckCircle } from 'lucide-react'
+import { programs } from '../data/programs'
 
 export default function Tutorials() {
-  const { id } = useParams<{ id: string }>();
-  const program = programs.find((p) => p.id === id);
-  const [selectedTutorial, setSelectedTutorial] = useState(0);
+  const { id } = useParams<{ id: string }>()
+  const program = programs.find((p) => p.id === id)
+  const [selectedTutorial, setSelectedTutorial] = useState(0)
 
   if (!program) {
     return (
@@ -23,7 +23,7 @@ export default function Tutorials() {
           </Link>
         </div>
       </div>
-    );
+    )
   }
 
   if (program.tutorials.length === 0) {
@@ -51,10 +51,10 @@ export default function Tutorials() {
           </div>
         </main>
       </div>
-    );
+    )
   }
 
-  const currentTutorial = program.tutorials[selectedTutorial];
+  const currentTutorial = program.tutorials[selectedTutorial]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -88,8 +88,8 @@ export default function Tutorials() {
                     onClick={() => setSelectedTutorial(index)}
                     className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
                       selectedTutorial === index
-                        ? "bg-indigo-600 text-white"
-                        : "bg-gray-50 text-gray-700 hover:bg-indigo-50"
+                        ? 'bg-indigo-600 text-white'
+                        : 'bg-gray-50 text-gray-700 hover:bg-indigo-50'
                     }`}
                   >
                     <div className="font-medium text-sm">{tutorial.title}</div>
@@ -159,5 +159,5 @@ export default function Tutorials() {
         </div>
       </main>
     </div>
-  );
+  )
 }
