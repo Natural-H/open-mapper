@@ -1,5 +1,11 @@
 import { Link, useParams } from 'react-router'
-import { ArrowLeft, ExternalLink, BookOpen, Download } from 'lucide-react'
+import {
+  ArrowLeft,
+  ExternalLink,
+  BookOpen,
+  Download,
+  ClipboardCopy
+} from 'lucide-react'
 import { programs, categories } from '../data/programs'
 
 export default function ProgramDetail() {
@@ -23,6 +29,11 @@ export default function ProgramDetail() {
       </div>
     )
   }
+
+  let parsedName = ''
+
+  if (program.scoopBucket) parsedName += program.scoopBucket + '/'
+  if (program.scoopName) parsedName += program.scoopName
 
   const categoryName = categories.find((c) => c.id === program.category)?.name
   const alternativePrograms = program.alternatives
@@ -68,6 +79,54 @@ export default function ProgramDetail() {
                   {program.description}
                 </p>
               </div>
+
+              {program.scoopName != null && program.scoopBucket != null && (
+                <div className="space-y-4 mb-6">
+                  <p className="text-gray-700">
+                    Instalar en Windows usando Scoop:
+                  </p>
+                  <div className="flex flex-row grow">
+                    <div className="flex flex-col gap-y-3 grow">
+                      <div
+                        className="border-2 bg-gray-100 rounded-sm flex flex-row hover:bg-gray-200 transition-colors hover:cursor-pointer"
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            `scoop bucket add ${program.scoopBucket}`
+                          )
+                        }}
+                      >
+                        <div className="p-1 flex flex-row justify-between grow">
+                          <p className="code text-gray-900">{`scoop bucket add ${program.scoopBucket}`}</p>
+                          <ClipboardCopy />
+                        </div>
+                      </div>
+                      <div
+                        className="border-2 bg-gray-100 rounded-sm flex flex-row hover:bg-gray-200 transition-colors hover:cursor-pointer"
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            `scoop install ${parsedName}`
+                          )
+                        }}
+                      >
+                        <div className="p-1 flex flex-row justify-between grow">
+                          <p className="code text-gray-900">{`scoop install ${parsedName}`}</p>
+                          <ClipboardCopy />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="flex flex-col w-10 bg-gray-100 border-2 mx-2 rounded-sm justify-center align-center hover:bg-gray-200 transition-colors hover:cursor-pointer"
+                      onClick={() => {
+                        navigator.clipboard.writeText(
+                          `scoop bucket add ${program.scoopBucket}\nscoop install ${parsedName}`
+                        )
+                      }}
+                    >
+                      <ClipboardCopy className="mx-auto" />
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="flex gap-4">
                 <a

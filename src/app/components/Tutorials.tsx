@@ -103,10 +103,10 @@ export default function Tutorials() {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="mb-6">
                 <h2 className="text-3xl font-bold text-gray-800 mb-3">
-                  {currentTutorial.title}
+                  {currentTutorial?.title}
                 </h2>
                 <p className="text-gray-600 text-lg">
-                  {currentTutorial.content}
+                  {currentTutorial?.content}
                 </p>
               </div>
 
@@ -115,7 +115,7 @@ export default function Tutorials() {
                   Pasos a seguir
                 </h3>
                 <div className="space-y-4">
-                  {currentTutorial.steps.map((step, index) => (
+                  {currentTutorial?.steps.map((step, index) => (
                     <div
                       key={index}
                       className="flex gap-4 p-4 bg-gray-50 rounded-lg"

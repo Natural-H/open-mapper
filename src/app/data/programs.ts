@@ -1,3 +1,5 @@
+export type Bucket = 'main' | 'extras'
+
 export interface Program {
   id: string
   name: string
@@ -9,6 +11,8 @@ export interface Program {
   alternatives?: string[] // IDs of alternative programs
   images: string[]
   tutorials: Tutorial[]
+  scoopName?: string
+  scoopBucket?: Bucket
 }
 
 export interface Tutorial {
@@ -28,7 +32,9 @@ export const programs: Program[] = [
       'GIMP (GNU Image Manipulation Program) es un editor de imágenes gratuito y de código abierto. Ofrece herramientas avanzadas de retoque fotográfico, composición y creación de imágenes.',
     category: 'image-editing',
     isProprietary: false,
-    alternatives: ['krita', 'photopea'],
+    alternatives: ['krita', 'photopea', 'photoshop'],
+    scoopBucket: 'extras',
+    scoopName: 'gimp',
     images: [
       'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
       'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=800&q=80'
@@ -67,7 +73,7 @@ export const programs: Program[] = [
       'Krita es un programa profesional de pintura digital gratuito y de código abierto. Diseñado por artistas para artistas, ofrece herramientas avanzadas para ilustración, concept art y texturizado.',
     category: 'image-editing',
     isProprietary: false,
-    alternatives: ['gimp', 'photopea'],
+    alternatives: ['gimp', 'photopea', 'illustrator'],
     images: [
       'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80'
     ],
