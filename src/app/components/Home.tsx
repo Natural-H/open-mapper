@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { Search, Filter } from 'lucide-react'
-import { programs, categories } from '../data/programs'
+import { programs, categories, getProgramLogo } from '../data/programs'
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -120,21 +120,25 @@ export default function Home() {
 
 function ProgramCard({ program }: { program: (typeof programs)[0] }) {
   const categoryName = categories.find((c) => c.id === program.category)?.name
+  const [logoSrc, setLogoSrc] = useState<string | undefined>(getProgramLogo(program))
+  const [logoError, setLogoError] = useState(false)
 
   return (
     <Link
       to={`/program/${program.id}`}
       className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group"
     >
-      <div className="h-48 bg-gradient-to-br from-indigo-400 to-purple-500 relative overflow-hidden">
-        {program.images.length > 0 ? (
+      <div className="h-48 bg-gradient-to-br from-gray-600 to-gray-700 relative overflow-hidden flex items-center justify-center p-8">
+        {logoSrc && !logoError ? (
           <img
-            src={program.images[0]}
+            src={logoSrc}
             alt={program.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+            style={{ filter: 'brightness(0) invert(1)' }}
+            onError={() => setLogoError(true)}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
+          <div className="text-gray-300 text-6xl font-bold">
             {program.name.charAt(0)}
           </div>
         )}

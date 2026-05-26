@@ -13,6 +13,7 @@ export interface Program {
   tutorials: Tutorial[]
   scoopName?: string
   scoopBucket?: Bucket
+  logo?: string
 }
 
 export interface Tutorial {
@@ -1598,6 +1599,75 @@ export const programs: Program[] = [
     ]
   }
 ]
+export function getProgramLogo(program: Program): string | undefined {
+  return PROGRAM_LOGOS[program.id]
+}
+
+const PROGRAM_LOGOS: Record<string, string> = {
+  'gimp': 'https://cdn.simpleicons.org/gimp',
+  'krita': 'https://cdn.simpleicons.org/krita',
+  'photopea': 'https://cdn.simpleicons.org/photopea',
+  'photoshop': 'https://cdn.simpleicons.org/adobephotoshop',
+  'davinci-resolve': 'https://cdn.simpleicons.org/davinciresolve',
+  'kdenlive': 'https://cdn.simpleicons.org/kdenlive',
+  'shotcut': 'https://cdn.simpleicons.org/shotcut',
+  'premiere-pro': 'https://cdn.simpleicons.org/adobepremierepro',
+  'audacity': 'https://cdn.simpleicons.org/audacity',
+  'ardour': 'https://cdn.simpleicons.org/ardour',
+  'ocenaudio': 'https://cdn.simpleicons.org/ocenaudio',
+  'vscode': 'https://cdn.simpleicons.org/visualstudiocode',
+  'vscodium': 'https://cdn.simpleicons.org/vscodium',
+  'atom': 'https://cdn.simpleicons.org/atom',
+  'canva': 'https://cdn.simpleicons.org/canva',
+  'inkscape': 'https://cdn.simpleicons.org/inkscape',
+  'figma': 'https://cdn.simpleicons.org/figma',
+  'blender': 'https://cdn.simpleicons.org/blender',
+  'freecad': 'https://cdn.simpleicons.org/freecad',
+  'maya': 'https://cdn.simpleicons.org/autodeskmaya',
+  '3ds-max': 'https://cdn.simpleicons.org/autodesk3dsmax',
+  'fusion-360': 'https://cdn.simpleicons.org/autodeskfusion360',
+  'libreoffice': 'https://cdn.simpleicons.org/libreoffice',
+  'onlyoffice': 'https://cdn.simpleicons.org/onlyoffice',
+  'microsoft-office': 'https://cdn.simpleicons.org/microsoftoffice',
+  'firefox': 'https://cdn.simpleicons.org/firefoxbrowser',
+  'brave': 'https://cdn.simpleicons.org/brave',
+  'google-chrome': 'https://cdn.simpleicons.org/googlechrome',
+  'bitwarden': 'https://cdn.simpleicons.org/bitwarden',
+  'keepassxc': 'https://cdn.simpleicons.org/keepassxc',
+  '1password': 'https://cdn.simpleicons.org/1password',
+  'element': 'https://cdn.simpleicons.org/element',
+  'discord': 'https://cdn.simpleicons.org/discord',
+  'slack': 'https://cdn.simpleicons.org/slack',
+  'logseq': 'https://cdn.simpleicons.org/logseq',
+  'obsidian': 'https://cdn.simpleicons.org/obsidian',
+  'notion': 'https://cdn.simpleicons.org/notion',
+  'nextcloud': 'https://cdn.simpleicons.org/nextcloud',
+  'syncthing': 'https://cdn.simpleicons.org/syncthing',
+  'google-drive': 'https://cdn.simpleicons.org/googledrive',
+  'gnucash': 'https://cdn.simpleicons.org/gnucash',
+  'actual-budget': 'https://cdn.simpleicons.org/actualbudget',
+  'ynab': 'https://cdn.simpleicons.org/ynab',
+  'darktable': 'https://cdn.simpleicons.org/darktable',
+  'rawtherapee': 'https://cdn.simpleicons.org/rawtherapee',
+  'lightroom': 'https://cdn.simpleicons.org/adobelightroom',
+  'olive': 'https://cdn.simpleicons.org/olivevideoeditor',
+  'final-cut-pro': 'https://cdn.simpleicons.org/finalcutpro',
+  'neovim': 'https://cdn.simpleicons.org/neovim',
+  'sublime-text': 'https://cdn.simpleicons.org/sublimetext',
+  'penpot': 'https://cdn.simpleicons.org/penpot',
+  'illustrator': 'https://cdn.simpleicons.org/adobeillustrator',
+  'signal': 'https://cdn.simpleicons.org/signal',
+  'telegram': 'https://cdn.simpleicons.org/telegram',
+  'whatsapp': 'https://cdn.simpleicons.org/whatsapp',
+  'zoom': 'https://cdn.simpleicons.org/zoom',
+  'joplin': 'https://cdn.simpleicons.org/joplin',
+  'standard-notes': 'https://cdn.simpleicons.org/standardnotes',
+  'seafile': 'https://cdn.simpleicons.org/seafile',
+  'dropbox': 'https://cdn.simpleicons.org/dropbox',
+  'obs-studio': 'https://cdn.simpleicons.org/obsstudio',
+  'virtualbox': 'https://cdn.simpleicons.org/virtualbox',
+}
+
 export const categories = [
   { id: 'all', name: 'Todos' },
   { id: 'image-editing', name: 'Edición de Imágenes' },

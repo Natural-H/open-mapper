@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router'
 import { ArrowLeft, ExternalLink, BookOpen, Package, ClipboardCopy, Check } from 'lucide-react'
-import { programs, categories } from '../data/programs'
+import { programs, categories, getProgramLogo } from '../data/programs'
 
 export default function ProgramDetail() {
   const { id } = useParams<{ id: string }>()
@@ -29,6 +29,7 @@ export default function ProgramDetail() {
   const alternativePrograms = program.alternatives
     ? programs.filter((p) => program.alternatives?.includes(p.id))
     : []
+  const programLogoSrc = getProgramLogo(program)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -49,19 +50,30 @@ export default function ProgramDetail() {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="grid md:grid-cols-2 gap-8 p-8">
             <div>
-              <div className="mb-6">
-                <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-4">
-                  {categoryName}
-                </span>
-                <h2 className="text-4xl font-bold text-gray-800 mb-2">
-                  {program.name}
-                </h2>
-                <p className="text-gray-600">
-                  Desarrollado por{' '}
-                  <span className="font-medium text-gray-800">
-                    {program.developer}
+              <div className="flex items-start gap-4 mb-6">
+                {programLogoSrc && (
+                  <div className="w-16 h-16 flex-shrink-0 rounded-lg bg-white border border-gray-200 p-2 flex items-center justify-center">
+                    <img
+                      src={programLogoSrc}
+                      alt={`${program.name} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                )}
+                <div>
+                  <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-2">
+                    {categoryName}
                   </span>
-                </p>
+                  <h2 className="text-4xl font-bold text-gray-800">
+                    {program.name}
+                  </h2>
+                  <p className="text-gray-600">
+                    Desarrollado por{' '}
+                    <span className="font-medium text-gray-800">
+                      {program.developer}
+                    </span>
+                  </p>
+                </div>
               </div>
 
               <div className="space-y-4 mb-6">
