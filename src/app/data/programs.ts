@@ -181,6 +181,8 @@ export const programs: Program[] = [
     category: 'video-editing',
     isProprietary: false,
     alternatives: ['davinci-resolve', 'shotcut'],
+    scoopBucket: 'extras',
+    scoopName: 'kdenlive',
     images: [
       'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80'
     ],
@@ -208,6 +210,8 @@ export const programs: Program[] = [
     category: 'video-editing',
     isProprietary: false,
     alternatives: ['kdenlive', 'davinci-resolve'],
+    scoopBucket: 'extras',
+    scoopName: 'shotcut',
     images: [
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'
     ],
@@ -248,6 +252,8 @@ export const programs: Program[] = [
     category: 'audio-editing',
     isProprietary: false,
     alternatives: ['ardour', 'ocenaudio'],
+    scoopBucket: 'main',
+    scoopName: 'audacity',
     images: [
       'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80',
       'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&q=80'
@@ -341,6 +347,8 @@ export const programs: Program[] = [
     category: 'programming',
     isProprietary: false,
     alternatives: ['vscodium', 'atom'],
+    scoopBucket: 'extras',
+    scoopName: 'vscode',
     images: [
       'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
       'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80'
@@ -461,6 +469,8 @@ export const programs: Program[] = [
     category: 'graphic-design',
     isProprietary: false,
     alternatives: ['canva', 'figma'],
+    scoopBucket: 'extras',
+    scoopName: 'inkscape',
     images: [
       'https://images.unsplash.com/photo-1609921205586-7e8a57516512?w=800&q=80'
     ],
@@ -515,6 +525,8 @@ export const programs: Program[] = [
     category: '3d-modeling',
     isProprietary: false,
     alternatives: ['freecad', 'maya', '3ds-max'],
+    scoopBucket: 'main',
+    scoopName: 'blender',
     images: [
       'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&q=80',
       'https://images.unsplash.com/photo-1618172193763-c511deb635ca?w=800&q=80'
@@ -622,6 +634,8 @@ export const programs: Program[] = [
     category: 'office',
     isProprietary: false,
     alternatives: ['onlyoffice', 'microsoft-office'],
+    scoopBucket: 'extras',
+    scoopName: 'libreoffice',
     images: [
       'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
       'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80'
@@ -661,6 +675,8 @@ export const programs: Program[] = [
     category: 'office',
     isProprietary: false,
     alternatives: ['libreoffice', 'microsoft-office'],
+    scoopBucket: 'extras',
+    scoopName: 'onlyoffice',
     images: [
       'https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=800&q=80'
     ],
@@ -701,6 +717,8 @@ export const programs: Program[] = [
     category: 'browsers',
     isProprietary: false,
     alternatives: ['brave', 'google-chrome'],
+    scoopBucket: 'main',
+    scoopName: 'firefox',
     images: [
       'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&q=80'
     ],
@@ -739,6 +757,8 @@ export const programs: Program[] = [
     category: 'browsers',
     isProprietary: false,
     alternatives: ['firefox', 'google-chrome'],
+    scoopBucket: 'extras',
+    scoopName: 'brave',
     images: [
       'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80'
     ],
@@ -779,6 +799,8 @@ export const programs: Program[] = [
     category: 'password-manager',
     isProprietary: false,
     alternatives: ['keepassxc', '1password'],
+    scoopBucket: 'extras',
+    scoopName: 'bitwarden',
     images: [
       'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80'
     ],
@@ -817,6 +839,8 @@ export const programs: Program[] = [
     category: 'password-manager',
     isProprietary: false,
     alternatives: ['bitwarden', '1password'],
+    scoopBucket: 'extras',
+    scoopName: 'keepassxc',
     images: [
       'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80'
     ],
@@ -910,6 +934,8 @@ export const programs: Program[] = [
     category: 'note-taking',
     isProprietary: false,
     alternatives: ['obsidian', 'notion'],
+    scoopBucket: 'extras',
+    scoopName: 'logseq',
     images: [
       'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80'
     ],
@@ -937,6 +963,8 @@ export const programs: Program[] = [
     category: 'note-taking',
     isProprietary: false,
     alternatives: ['logseq', 'notion'],
+    scoopBucket: 'extras',
+    scoopName: 'obsidian',
     images: [
       'https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=800&q=80'
     ],
@@ -988,6 +1016,8 @@ export const programs: Program[] = [
     category: 'cloud-storage',
     isProprietary: false,
     alternatives: ['syncthing', 'google-drive'],
+    scoopBucket: 'main',
+    scoopName: 'nextcloud',
     images: [
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80'
     ],
@@ -1015,6 +1045,8 @@ export const programs: Program[] = [
     category: 'cloud-storage',
     isProprietary: false,
     alternatives: ['nextcloud', 'google-drive'],
+    scoopBucket: 'extras',
+    scoopName: 'syncthing',
     images: [
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
     ],

@@ -1,11 +1,6 @@
+import { useState } from 'react'
 import { Link, useParams } from 'react-router'
-import {
-  ArrowLeft,
-  ExternalLink,
-  BookOpen,
-  Download,
-  ClipboardCopy
-} from 'lucide-react'
+import { ArrowLeft, ExternalLink, BookOpen, Package, ClipboardCopy, Check } from 'lucide-react'
 import { programs, categories } from '../data/programs'
 
 export default function ProgramDetail() {
@@ -29,11 +24,6 @@ export default function ProgramDetail() {
       </div>
     )
   }
-
-  let parsedName = ''
-
-  if (program.scoopBucket) parsedName += program.scoopBucket + '/'
-  if (program.scoopName) parsedName += program.scoopName
 
   const categoryName = categories.find((c) => c.id === program.category)?.name
   const alternativePrograms = program.alternatives
@@ -80,55 +70,15 @@ export default function ProgramDetail() {
                 </p>
               </div>
 
-              {program.scoopName != null && program.scoopBucket != null && (
-                <div className="space-y-4 mb-6">
-                  <p className="text-gray-700">
-                    Instalar en Windows usando Scoop:
-                  </p>
-                  <div className="flex flex-row grow">
-                    <div className="flex flex-col gap-y-3 grow">
-                      <div
-                        className="border-2 bg-gray-100 rounded-sm flex flex-row hover:bg-gray-200 transition-colors hover:cursor-pointer"
-                        onClick={() => {
-                          navigator.clipboard.writeText(
-                            `scoop bucket add ${program.scoopBucket}`
-                          )
-                        }}
-                      >
-                        <div className="p-1 flex flex-row justify-between grow">
-                          <p className="code text-gray-900">{`scoop bucket add ${program.scoopBucket}`}</p>
-                          <ClipboardCopy />
-                        </div>
-                      </div>
-                      <div
-                        className="border-2 bg-gray-100 rounded-sm flex flex-row hover:bg-gray-200 transition-colors hover:cursor-pointer"
-                        onClick={() => {
-                          navigator.clipboard.writeText(
-                            `scoop install ${parsedName}`
-                          )
-                        }}
-                      >
-                        <div className="p-1 flex flex-row justify-between grow">
-                          <p className="code text-gray-900">{`scoop install ${parsedName}`}</p>
-                          <ClipboardCopy />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="flex flex-col w-10 bg-gray-100 border-2 mx-2 rounded-sm justify-center align-center hover:bg-gray-200 transition-colors hover:cursor-pointer"
-                      onClick={() => {
-                        navigator.clipboard.writeText(
-                          `scoop bucket add ${program.scoopBucket}\nscoop install ${parsedName}`
-                        )
-                      }}
-                    >
-                      <ClipboardCopy className="mx-auto" />
-                    </div>
-                  </div>
-                </div>
+              {program.scoopName && program.scoopBucket && (
+                <ScoopInstallSection
+                  bucket={program.scoopBucket}
+                  name={program.scoopName}
+                  programId={program.id}
+                />
               )}
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3">
                 <a
                   href={program.homepage}
                   target="_blank"
@@ -206,6 +156,90 @@ export default function ProgramDetail() {
           )}
         </div>
       </main>
+    </div>
+  )
+}
+
+function ScoopInstallSection({
+  bucket,
+  name,
+  programId
+}: {
+  bucket: string
+  name: string
+  programId: string
+}) {
+  const parsedName = `${bucket}/${name}`
+  const installCmd = `scoop install ${parsedName}`
+  const bucketCmd = `scoop bucket add ${bucket}`
+  const [copiedInstall, setCopiedInstall] = useState(false)
+  const [copiedBucket, setCopiedBucket] = useState(false)
+  const [copiedBoth, setCopiedBoth] = useState(false)
+
+  const copyCmd = (cmd: string, setter: (v: boolean) => void) => {
+    navigator.clipboard.writeText(cmd)
+    setter(true)
+    setTimeout(() => setter(false), 2000)
+  }
+
+  return (
+    <div className="mb-6">
+      <div className="flex items-center justify-between mb-2">
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+          <Package className="w-3.5 h-3.5" />
+          Scoop
+        </p>
+        <Link
+          to={`/scoop-guide?program=${programId}`}
+          className="text-xs text-indigo-600 hover:text-indigo-800 transition-colors"
+        >
+          ¿Qué es Scoop?
+        </Link>
+      </div>
+
+      <div className="border border-gray-300 rounded-lg overflow-hidden flex">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between px-4 py-2.5 font-mono text-sm text-gray-900 bg-white border-b border-gray-300">
+            <span className="truncate">{bucketCmd}</span>
+            <button
+              onClick={() => copyCmd(bucketCmd, setCopiedBucket)}
+              className="ml-3 flex items-center gap-1 px-2 py-1 rounded text-xs font-sans font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors flex-shrink-0"
+            >
+              {copiedBucket ? (
+                <Check className="w-3.5 h-3.5 text-green-600" />
+              ) : (
+                <ClipboardCopy className="w-3.5 h-3.5" />
+              )}
+              {copiedBucket ? 'Copiado' : 'Copiar'}
+            </button>
+          </div>
+          <div className="flex items-center justify-between px-4 py-2.5 font-mono text-sm text-gray-900 bg-white">
+            <span className="truncate">{installCmd}</span>
+            <button
+              onClick={() => copyCmd(installCmd, setCopiedInstall)}
+              className="ml-3 flex items-center gap-1 px-2 py-1 rounded text-xs font-sans font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors flex-shrink-0"
+            >
+              {copiedInstall ? (
+                <Check className="w-3.5 h-3.5 text-green-600" />
+              ) : (
+                <ClipboardCopy className="w-3.5 h-3.5" />
+              )}
+              {copiedInstall ? 'Copiado' : 'Copiar'}
+            </button>
+          </div>
+        </div>
+        <button
+          onClick={() => copyCmd(`${bucketCmd}\n${installCmd}`, setCopiedBoth)}
+          className="flex items-center justify-center w-14 border-l border-gray-300 bg-white hover:bg-gray-50 transition-colors flex-shrink-0"
+          title="Copiar ambos comandos"
+        >
+          {copiedBoth ? (
+            <Check className="w-5 h-5 text-green-600" />
+          ) : (
+            <ClipboardCopy className="w-5 h-5 text-gray-500" />
+          )}
+        </button>
+      </div>
     </div>
   )
 }
