@@ -33,8 +33,8 @@ export default function Home() {
         'gimp',
         'audacity',
         'vscode',
-        'canva',
-        'inkscape'
+        'blender',
+        'libreoffice'
       ].includes(p.id)
   )
 
