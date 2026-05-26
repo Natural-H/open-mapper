@@ -1,28 +1,30 @@
 # Open Mapper
 
-Open Mapper es una aplicación web para descubrir alternativas gratuitas y de código abierto a software propietario popular. Explorá programas por categoría, compará alternativas y seguí tutoriales paso a paso.
+Open Mapper es una aplicación web para descubrir alternativas gratuitas y de código abierto a software propietario popular. Explora programas por categoría, compara alternativas y sigue tutoriales paso a paso.
 
 ---
 
 ## Programas disponibles
 
-Actualmente hay **42 programas** organizados en **14 categorías**:
+Actualmente hay **62 programas** organizados en **16 categorías**:
 
 | Categoría | Programas |
 |---|---|
-| Edición de Imágenes | GIMP, Krita, Photopea, Photoshop† |
-| Edición de Video | DaVinci Resolve, Kdenlive, Shotcut, Premiere Pro† |
+| Edición de Imágenes | GIMP, Krita, Photopea, Darktable, RawTherapee, Photoshop†, Lightroom† |
+| Edición de Video | DaVinci Resolve, Kdenlive, Shotcut, Olive, Premiere Pro†, Final Cut Pro† |
 | Edición de Audio | Audacity, Ardour, Ocenaudio |
-| Programación | VS Code, VSCodium, Atom |
-| Diseño Gráfico | Canva, Inkscape, Figma |
+| Programación | VS Code, VSCodium, Atom, Neovim, Sublime Text† |
+| Diseño Gráfico | Canva, Inkscape, Figma, Penpot, Illustrator† |
 | Modelado 3D | Blender, FreeCAD, Maya†, 3ds Max†, Fusion 360† |
 | Ofimática | LibreOffice, OnlyOffice, Microsoft Office† |
 | Navegadores Web | Firefox, Brave, Google Chrome† |
 | Gestión de Contraseñas | Bitwarden, KeePassXC, 1Password† |
-| Comunicación | Element, Discord†, Slack† |
-| Toma de Notas | Logseq, Obsidian, Notion† |
-| Almacenamiento en la Nube | Nextcloud, Syncthing, Google Drive† |
+| Comunicación | Element, Signal, Telegram, Discord†, Slack†, WhatsApp†, Zoom† |
+| Toma de Notas | Logseq, Obsidian, Joplin, Standard Notes, Notion† |
+| Almacenamiento en la Nube | Nextcloud, Syncthing, Seafile, Google Drive†, Dropbox† |
 | Finanzas Personales | GnuCash, Actual Budget, YNAB† |
+| Streaming y Grabación | OBS Studio |
+| Virtualización | VirtualBox |
 
 † Software propietario (mostrado solo como alternativa, no aparece en búsquedas)
 
@@ -51,10 +53,10 @@ interface Program {
 
 ## Cómo agregar un programa
 
-1. Abrí `src/app/data/programs.ts`
-2. Agregá un nuevo objeto al array `programs` siguiendo el formato existente
-3. Si el programa es la alternativa de otro existente, actualizá el array `alternatives` de ese programa
-4. Si la categoría no existe, agregala al array `categories` al final del archivo
+1. Abre `src/app/data/programs.ts`
+2. Agrega un nuevo objeto al array `programs` siguiendo el formato existente
+3. Si el programa es la alternativa de otro existente, actualiza el array `alternatives` de ese programa
+4. Si la categoría no existe, agrégala al array `categories` al final del archivo
 
 Ver [`CONTRIBUTING.md`](./CONTRIBUTING.md) para instrucciones detalladas.
 

@@ -146,16 +146,16 @@ export default function ScoopGuide() {
               Instalación de Scoop
             </h2>
             <div className="space-y-4">
-              <StepCard number={1} title="Abrí PowerShell">
+              <StepCard number={1} title="Abre PowerShell">
                 <p>
-                  Presioná <kbd className="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded text-xs font-mono">Win + X</kbd> y seleccioná{' '}
+                  Presiona <kbd className="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded text-xs font-mono">Win + X</kbd> y selecciona{' '}
                   <strong>"Windows PowerShell"</strong> o <strong>"Terminal"</strong>.
                 </p>
               </StepCard>
 
-              <StepCard number={2} title="Configurá la política de ejecución">
+              <StepCard number={2} title="Configura la política de ejecución">
                 <p>
-                  Scoop necesita permisos para ejecutar scripts. Ejecutá este
+                  Scoop necesita permisos para ejecutar scripts. Ejecuta este
                   comando:
                 </p>
                 <div className="mt-2">
@@ -166,9 +166,9 @@ export default function ScoopGuide() {
                 </div>
               </StepCard>
 
-              <StepCard number={3} title="Instalá Scoop">
+              <StepCard number={3} title="Instala Scoop">
                 <p>
-                  Ejecutá el siguiente comando para instalar Scoop:
+                  Ejecuta el siguiente comando para instalar Scoop:
                 </p>
                 <div className="mt-2">
                   <CodeBlock
@@ -177,12 +177,12 @@ export default function ScoopGuide() {
                   />
                 </div>
                 <p className="text-xs text-gray-400 mt-1.5">
-                  También podés usar: <code className="text-gray-500">iwr -useb get.scoop.sh | iex</code>
+                  También puedes usar: <code className="text-gray-500">iwr -useb get.scoop.sh | iex</code>
                 </p>
               </StepCard>
 
-              <StepCard number={4} title="Verificá la instalación">
-                <p>Comprobá que Scoop se instaló correctamente:</p>
+              <StepCard number={4} title="Verifica la instalación">
+                <p>Comprueba que Scoop se instaló correctamente:</p>
                 <div className="mt-2">
                   <CodeBlock code="scoop --version" label="PowerShell" />
                 </div>
@@ -231,7 +231,7 @@ export default function ScoopGuide() {
                     Agregar un bucket
                   </h3>
                   <p className="text-sm text-gray-600 mb-2">
-                    Algunos programas están en buckets adicionales. Agregalos
+                    Algunos programas están en buckets adicionales. Agrégalos
                     primero:
                   </p>
                   <CodeBlock
@@ -288,7 +288,7 @@ export default function ScoopGuide() {
                 Instalar {program.name} con Scoop
               </h2>
               <p className="text-sm text-indigo-800 mb-4">
-                Para instalar {program.name} en Windows usando Scoop, ejecutá
+                Para instalar {program.name} en Windows usando Scoop, ejecuta
                 estos comandos en PowerShell:
               </p>
               <div className="space-y-3">

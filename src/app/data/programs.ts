@@ -36,8 +36,8 @@ export const programs: Program[] = [
     scoopBucket: 'extras',
     scoopName: 'gimp',
     images: [
-      'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-      'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=800&q=80'
+      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80',
+      'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80'
     ],
     tutorials: [
       {
@@ -74,8 +74,10 @@ export const programs: Program[] = [
     category: 'image-editing',
     isProprietary: false,
     alternatives: ['gimp', 'photopea', 'illustrator'],
+    scoopBucket: 'extras',
+    scoopName: 'krita',
     images: [
-      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80'
+      'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80'
     ],
     tutorials: [
       {
@@ -141,6 +143,8 @@ export const programs: Program[] = [
     category: 'video-editing',
     isProprietary: false,
     alternatives: ['kdenlive', 'shotcut'],
+    scoopBucket: 'extras',
+    scoopName: 'davinci-resolve',
     images: [
       'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
       'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&q=80'
@@ -388,6 +392,8 @@ export const programs: Program[] = [
     category: 'programming',
     isProprietary: false,
     alternatives: ['vscode', 'atom'],
+    scoopBucket: 'main',
+    scoopName: 'vscodium',
     images: [
       'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80'
     ],
@@ -415,6 +421,8 @@ export const programs: Program[] = [
     category: 'programming',
     isProprietary: false,
     alternatives: ['vscode', 'vscodium'],
+    scoopBucket: 'extras',
+    scoopName: 'atom',
     images: [
       'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&q=80'
     ],
@@ -637,8 +645,8 @@ export const programs: Program[] = [
     scoopBucket: 'extras',
     scoopName: 'libreoffice',
     images: [
-      'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
-      'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80'
+      'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80',
+      'https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=800&q=80'
     ],
     tutorials: [
       {
@@ -881,6 +889,8 @@ export const programs: Program[] = [
     category: 'communication',
     isProprietary: false,
     alternatives: ['discord', 'slack'],
+    scoopBucket: 'extras',
+    scoopName: 'element',
     images: [
       'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=800&q=80'
     ],
@@ -937,7 +947,7 @@ export const programs: Program[] = [
     scoopBucket: 'extras',
     scoopName: 'logseq',
     images: [
-      'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80'
+      'https://images.unsplash.com/photo-1487611459768-bd414656ea10?w=800&q=80'
     ],
     tutorials: [
       {
@@ -966,7 +976,7 @@ export const programs: Program[] = [
     scoopBucket: 'extras',
     scoopName: 'obsidian',
     images: [
-      'https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=800&q=80'
+      'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=800&q=80'
     ],
     tutorials: [
       {
@@ -1143,6 +1153,449 @@ export const programs: Program[] = [
     alternatives: ['gnucash', 'actual-budget'],
     images: [],
     tutorials: []
+  },
+  {
+    id: 'darktable',
+    name: 'Darktable',
+    developer: 'Darktable Community',
+    homepage: 'https://www.darktable.org',
+    description:
+      'Darktable es un software de revelado raw gratuito y de código abierto. Ofrece un flujo de trabajo no destructivo para fotógrafos con gestión de color y herramientas de edición avanzadas.',
+    category: 'image-editing',
+    isProprietary: false,
+    alternatives: ['rawtherapee', 'lightroom'],
+    scoopBucket: 'main',
+    scoopName: 'darktable',
+    images: [
+      'https://images.unsplash.com/photo-1590073242678-70ee3fc28f8e?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'darktable-import',
+        title: 'Importar y organizar fotos',
+        content: 'Aprende a gestionar tu biblioteca de fotos en Darktable',
+        steps: [
+          'Abre Darktable y conecta tu cámara o carpeta de fotos',
+          'Usa la vista de lighttable para importar imágenes',
+          'Aplica etiquetas de color y estrellas para clasificar',
+          'Filtra por metadatos para encontrar fotos rápidamente'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'rawtherapee',
+    name: 'RawTherapee',
+    developer: 'RawTherapee Team',
+    homepage: 'https://rawtherapee.com',
+    description:
+      'RawTherapee es un convertidor de raw gratuito y de código abierto. Proporciona herramientas profesionales de procesamiento de imágenes raw con control preciso sobre cada parámetro.',
+    category: 'image-editing',
+    isProprietary: false,
+    alternatives: ['darktable', 'lightroom'],
+    scoopBucket: 'main',
+    scoopName: 'rawtherapee',
+    images: [
+      'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'rawtherapee-basics',
+        title: 'Revelado básico',
+        content: 'Ajusta exposición, balance de blancos y nitidez',
+        steps: [
+          'Abre tu archivo raw en RawTherapee',
+          'Ajusta la exposición con el control de EV',
+          'Corrige el balance de blancos con el cuentagotas',
+          'Aplica nitidez y reducción de ruido en la pestaña Detalle',
+          'Exporta como JPEG o TIFF desde el panel de cola'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'lightroom',
+    name: 'Adobe Lightroom',
+    developer: 'Adobe Inc.',
+    homepage: 'https://www.adobe.com/products/photoshop-lightroom.html',
+    description:
+      'Adobe Lightroom es un software profesional de organización y edición de fotografías con potentes herramientas de revelado raw.',
+    category: 'image-editing',
+    isProprietary: true,
+    alternatives: ['darktable', 'rawtherapee', 'gimp'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'olive',
+    name: 'Olive Video Editor',
+    developer: 'Olive Team',
+    homepage: 'https://olivevideoeditor.org',
+    description:
+      'Olive es un editor de video no lineal gratuito y de código abierto. Ofrece una interfaz moderna y herramientas profesionales para edición, composición y efectos visuales.',
+    category: 'video-editing',
+    isProprietary: false,
+    alternatives: ['davinci-resolve', 'kdenlive', 'shotcut'],
+    scoopBucket: 'extras',
+    scoopName: 'olive',
+    images: [
+      'https://images.unsplash.com/photo-1536895058-45e5c5e8d4c9?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'olive-timeline',
+        title: 'Edición básica en la línea de tiempo',
+        content: 'Aprende a cortar y organizar clips',
+        steps: [
+          'Importa tus videos arrastrándolos al proyecto',
+          'Arrastra los clips a la línea de tiempo',
+          'Usa la herramienta de corte (C) para dividir clips',
+          'Selecciona y elimina secciones no deseadas',
+          'Exporta tu proyecto (Ctrl+E) en el formato deseado'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'final-cut-pro',
+    name: 'Final Cut Pro',
+    developer: 'Apple Inc.',
+    homepage: 'https://www.apple.com/final-cut-pro',
+    description:
+      'Final Cut Pro es el editor de video profesional de Apple con rendimiento optimizado para hardware Mac.',
+    category: 'video-editing',
+    isProprietary: true,
+    alternatives: ['davinci-resolve', 'kdenlive', 'shotcut', 'olive'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'neovim',
+    name: 'Neovim',
+    developer: 'Neovim Community',
+    homepage: 'https://neovim.io',
+    description:
+      'Neovim es un editor de texto moderno y extensible basado en Vim. Ofrece rendimiento mejorado, Lua integrado y una arquitectura de plugins más flexible.',
+    category: 'programming',
+    isProprietary: false,
+    alternatives: ['vscode', 'vscodium'],
+    scoopBucket: 'main',
+    scoopName: 'neovim',
+    images: [
+      'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'neovim-basics',
+        title: 'Primeros pasos en Neovim',
+        content: 'Aprende la navegación y edición básica',
+        steps: [
+          'Abre Neovim desde la terminal: nvim archivo.txt',
+          'Presiona i para entrar en modo inserción y editar',
+          'Presiona Esc para volver al modo normal',
+          'Guarda con :w y sal con :q',
+          'Usa :help para explorar la documentación integrada'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'sublime-text',
+    name: 'Sublime Text',
+    developer: 'Sublime HQ Pty Ltd',
+    homepage: 'https://www.sublimetext.com',
+    description:
+      'Sublime Text es un editor de texto y código sofisticado con una interfaz minimalista, múltiples cursores y un potente sistema de plugins.',
+    category: 'programming',
+    isProprietary: true,
+    alternatives: ['vscode', 'vscodium', 'neovim'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'penpot',
+    name: 'Penpot',
+    developer: 'Penpot Community',
+    homepage: 'https://penpot.app',
+    description:
+      'Penpot es una plataforma de diseño y prototipado colaborativa, gratuita y de código abierto. Es la primera alternativa libre a Figma que funciona en el navegador.',
+    category: 'graphic-design',
+    isProprietary: false,
+    alternatives: ['figma', 'inkscape'],
+    images: [
+      'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'penpot-design',
+        title: 'Diseñar una interfaz en Penpot',
+        content: 'Crea prototipos de interfaz de usuario',
+        steps: [
+          'Visita penpot.app y crea una cuenta gratuita',
+          'Crea un nuevo proyecto de diseño',
+          'Usa las herramientas de rectángulo, texto y círculo',
+          'Conecta pantallas con la herramienta de prototipado',
+          'Comparte el enlace para recibir feedback'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'illustrator',
+    name: 'Adobe Illustrator',
+    developer: 'Adobe Inc.',
+    homepage: 'https://www.adobe.com/products/illustrator.html',
+    description:
+      'Adobe Illustrator es el software estándar de la industria para diseño de gráficos vectoriales, ilustración y tipografía.',
+    category: 'graphic-design',
+    isProprietary: true,
+    alternatives: ['inkscape', 'penpot', 'krita'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'signal',
+    name: 'Signal',
+    developer: 'Signal Foundation',
+    homepage: 'https://signal.org',
+    description:
+      'Signal es una aplicación de mensajería gratuita y de código abierto con cifrado de extremo a extremo. Considerada la opción más segura para comunicación privada.',
+    category: 'communication',
+    isProprietary: false,
+    alternatives: ['element', 'telegram', 'whatsapp'],
+    scoopBucket: 'extras',
+    scoopName: 'signal',
+    images: [
+      'https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'signal-basics',
+        title: 'Configurar Signal',
+        content: 'Comienza a chatear de forma segura',
+        steps: [
+          'Descarga Signal desde signal.org o tu tienda de apps',
+          'Regístrate con tu número de teléfono',
+          'Verifica tu identidad con el código SMS',
+          'Configura la privacidad en Ajustes > Privacidad',
+          'Inicia un chat cifrado con cualquier contacto'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'telegram',
+    name: 'Telegram',
+    developer: 'Telegram FZ-LLC',
+    homepage: 'https://telegram.org',
+    description:
+      'Telegram es una aplicación de mensajería gratuita con funciones de canales, bots y grupos de hasta 200.000 miembros.',
+    category: 'communication',
+    isProprietary: false,
+    alternatives: ['element', 'signal', 'whatsapp'],
+    scoopBucket: 'extras',
+    scoopName: 'telegram',
+    images: [
+      'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'telegram-channels',
+        title: 'Usar canales y grupos',
+        content: 'Crea y gestiona comunidades en Telegram',
+        steps: [
+          'Abre Telegram y toca el icono de lápiz',
+          'Selecciona Nuevo grupo o Nuevo canal',
+          'Invita participantes con el enlace de invitación',
+          'Configura permisos y administradores',
+          'Usa bots como @BotFather para automatizar'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'whatsapp',
+    name: 'WhatsApp',
+    developer: 'Meta Platforms Inc.',
+    homepage: 'https://www.whatsapp.com',
+    description:
+      'WhatsApp es la aplicación de mensajería más utilizada del mundo con cifrado de extremo a extremo.',
+    category: 'communication',
+    isProprietary: true,
+    alternatives: ['signal', 'telegram', 'element'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'zoom',
+    name: 'Zoom',
+    developer: 'Zoom Video Communications Inc.',
+    homepage: 'https://zoom.us',
+    description:
+      'Zoom es una plataforma de videoconferencias y reuniones virtuales ampliamente utilizada en entornos empresariales y educativos.',
+    category: 'communication',
+    isProprietary: true,
+    alternatives: ['element', 'signal'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'joplin',
+    name: 'Joplin',
+    developer: 'Joplin Community',
+    homepage: 'https://joplinapp.org',
+    description:
+      'Joplin es una aplicación de notas y tareas de código abierto. Soporta Markdown, sincronización con múltiples servicios y organización mediante libretas y etiquetas.',
+    category: 'note-taking',
+    isProprietary: false,
+    alternatives: ['logseq', 'obsidian', 'standard-notes'],
+    scoopBucket: 'extras',
+    scoopName: 'joplin',
+    images: [
+      'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'joplin-sync',
+        title: 'Sincronizar notas entre dispositivos',
+        content: 'Configura la sincronización en Joplin',
+        steps: [
+          'Abre Joplin y ve a Herramientas > Opciones > Sincronización',
+          'Elige un servicio (Nextcloud, Dropbox, OneDrive)',
+          'Configura la URL y credenciales',
+          'Las notas se sincronizarán automáticamente'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'standard-notes',
+    name: 'Standard Notes',
+    developer: 'Standard Notes Community',
+    homepage: 'https://standardnotes.com',
+    description:
+      'Standard Notes es una aplicación de notas cifrada de extremo a extremo. Prioriza la privacidad con texto plano y sincronización segura.',
+    category: 'note-taking',
+    isProprietary: false,
+    alternatives: ['joplin', 'obsidian', 'logseq'],
+    images: [
+      'https://images.unsplash.com/photo-1487611459768-bd414656ea10?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'standard-notes-basics',
+        title: 'Primeros pasos en Standard Notes',
+        content: 'Configura tu espacio de notas seguro',
+        steps: [
+          'Crea una cuenta en standardnotes.com',
+          'Descarga la app en tus dispositivos',
+          'Usa Markdown para dar formato a tus notas',
+          'Organiza con etiquetas y carpetas'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'seafile',
+    name: 'Seafile',
+    developer: 'Seafile Ltd.',
+    homepage: 'https://www.seafile.com',
+    description:
+      'Seafile es una plataforma de sincronización y compartición de archivos de código abierto. Ofrece cifrado del lado del cliente y sincronización eficiente.',
+    category: 'cloud-storage',
+    isProprietary: false,
+    alternatives: ['nextcloud', 'syncthing', 'google-drive'],
+    scoopBucket: 'extras',
+    scoopName: 'seafile',
+    images: [
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'seafile-setup',
+        title: 'Configurar Seafile',
+        content: 'Instala y sincroniza archivos con Seafile',
+        steps: [
+          'Instala el cliente Seafile en tu ordenador',
+          'Conéctate a tu servidor o usa SeaCloud.cc',
+          'Crea una biblioteca sincronizada',
+          'Comparte archivos con enlaces protegidos'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'dropbox',
+    name: 'Dropbox',
+    developer: 'Dropbox Inc.',
+    homepage: 'https://www.dropbox.com',
+    description:
+      'Dropbox es un servicio de almacenamiento en la nube con sincronización de archivos y herramientas de colaboración.',
+    category: 'cloud-storage',
+    isProprietary: true,
+    alternatives: ['nextcloud', 'seafile', 'syncthing'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'obs-studio',
+    name: 'OBS Studio',
+    developer: 'OBS Project',
+    homepage: 'https://obsproject.com',
+    description:
+      'OBS Studio es un software gratuito y de código abierto para grabación de pantalla y transmisión en vivo. Compatible con fuentes múltiples, mezcla de audio y escenas personalizables.',
+    category: 'streaming',
+    isProprietary: false,
+    alternatives: [],
+    scoopBucket: 'extras',
+    scoopName: 'obs-studio',
+    images: [
+      'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'obs-setup',
+        title: 'Configurar OBS Studio',
+        content: 'Prepara tu primera transmisión o grabación',
+        steps: [
+          'Descarga OBS desde obsproject.com',
+          'Agrega una fuente de captura de pantalla o ventana',
+          'Configura el micrófono en Mezclador de audio',
+          'Ajusta la resolución en Ajustes > Video',
+          'Presiona Iniciar grabación o Iniciar transmisión'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'virtualbox',
+    name: 'VirtualBox',
+    developer: 'Oracle Corporation',
+    homepage: 'https://www.virtualbox.org',
+    description:
+      'VirtualBox es un hipervisor gratuito y de código abierto para virtualización de sistemas operativos. Permite ejecutar múltiples máquinas virtuales en un solo equipo.',
+    category: 'virtualization',
+    isProprietary: false,
+    alternatives: [],
+    scoopBucket: 'extras',
+    scoopName: 'virtualbox',
+    images: [
+      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'virtualbox-vm',
+        title: 'Crear una máquina virtual',
+        content: 'Instala un sistema operativo en VirtualBox',
+        steps: [
+          'Descarga e instala VirtualBox desde virtualbox.org',
+          'Haz clic en Nueva para crear una máquina virtual',
+          'Asigna nombre, tipo y versión del SO',
+          'Configura la memoria RAM y el disco duro virtual',
+          'Monta la ISO del sistema e inicia la máquina'
+        ]
+      }
+    ]
   }
 ]
 export const categories = [
@@ -1159,5 +1612,7 @@ export const categories = [
   { id: 'communication', name: 'Comunicación' },
   { id: 'note-taking', name: 'Toma de Notas' },
   { id: 'cloud-storage', name: 'Almacenamiento en la Nube' },
-  { id: 'finance', name: 'Finanzas Personales' }
+  { id: 'finance', name: 'Finanzas Personales' },
+  { id: 'streaming', name: 'Streaming y Grabación' },
+  { id: 'virtualization', name: 'Virtualización' }
 ]

@@ -34,7 +34,7 @@ export default function Home() {
         'audacity',
         'vscode',
         'blender',
-        'libreoffice'
+        'obs-studio'
       ].includes(p.id)
   )
 
