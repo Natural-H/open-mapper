@@ -1597,6 +1597,333 @@ export const programs: Program[] = [
         ]
       }
     ]
+  },
+  {
+    id: 'kicad',
+    name: 'KiCad',
+    developer: 'KiCad Development Team',
+    homepage: 'https://www.kicad.org',
+    description:
+      'KiCad es un software de diseño de circuitos impresos (PCB) gratuito y de código abierto. Ofrece captura esquemática, diseño de PCB, visualización 3D y simulación SPICE.',
+    category: 'electronics',
+    isProprietary: false,
+    alternatives: ['eagle', 'altium'],
+    scoopBucket: 'extras',
+    scoopName: 'kicad',
+    images: [
+      'https://images.unsplash.com/photo-1553406830-ef0e3f0c5c5d?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'kicad-schematic',
+        title: 'Crear un esquemático',
+        content: 'Aprende a diseñar tu primer esquemático en KiCad',
+        steps: [
+          'Abre KiCad y crea un nuevo proyecto',
+          'Abre el editor de esquemáticos (Eeschema)',
+          'Añade componentes desde la biblioteca',
+          'Conecta los componentes usando cables',
+          'Asigna footprints y genera la netlist'
+        ]
+      },
+      {
+        id: 'kicad-pcb',
+        title: 'Diseñar una placa PCB',
+        content: 'Convierte tu esquemático en un diseño de PCB',
+        steps: [
+          'Abre el editor de PCB (Pcbnew) desde KiCad',
+          'Importa la netlist del esquemático',
+          'Coloca los componentes en el área de trabajo',
+          'Enruta las pistas usando las herramientas de routing',
+          'Exporta los archivos Gerber para fabricación'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'arduino-ide',
+    name: 'Arduino IDE',
+    developer: 'Arduino',
+    homepage: 'https://www.arduino.cc',
+    description:
+      'Arduino IDE es el entorno de desarrollo oficial para programar placas Arduino. Ofrece un editor de código, compilador y cargador de programas para microcontroladores.',
+    category: 'electronics',
+    isProprietary: false,
+    alternatives: ['platformio'],
+    scoopBucket: 'extras',
+    scoopName: 'arduino',
+    images: [
+      'https://images.unsplash.com/photo-1517077302219-7eab0f5aa0a3?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'arduino-blink',
+        title: 'Tu primer programa: Blink',
+        content: 'Programa el clásico LED parpadeante en Arduino',
+        steps: [
+          'Conecta tu placa Arduino al ordenador vía USB',
+          'Abre Arduino IDE y selecciona tu placa en Herramientas > Placa',
+          'Selecciona el puerto serie en Herramientas > Puerto',
+          'Copia el ejemplo Blink (Archivo > Ejemplos > 01.Basics > Blink)',
+          'Haz clic en Subir y observa el LED parpadear'
+        ]
+      },
+      {
+        id: 'arduino-serial',
+        title: 'Comunicación serie',
+        content: 'Envía y recibe datos por el puerto serie',
+        steps: [
+          'Abre un nuevo sketch en Arduino IDE',
+          'Usa Serial.begin(9600) en setup() para iniciar',
+          'Usa Serial.println() para enviar datos al PC',
+          'Usa Serial.read() para recibir datos desde el PC',
+          'Abre el Monitor Serie (Herramientas > Monitor Serie) para ver los datos'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'platformio',
+    name: 'PlatformIO',
+    developer: 'PlatformIO Community',
+    homepage: 'https://platformio.org',
+    description:
+      'PlatformIO es un ecosistema de desarrollo profesional para IoT y sistemas embebidos. Compatible con Arduino, ESP32, STM32, Raspberry Pi y más de 40 plataformas.',
+    category: 'electronics',
+    isProprietary: false,
+    alternatives: ['arduino-ide'],
+    images: [
+      'https://images.unsplash.com/photo-1553406830-ef0e3f0c5c5d?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'platformio-setup',
+        title: 'Configurar PlatformIO',
+        content: 'Instala y configura PlatformIO para tus proyectos',
+        steps: [
+          'Instala la extensión PlatformIO en VS Code',
+          'Crea un nuevo proyecto (PlatformIO > New Project)',
+          'Selecciona tu placa (ej: Arduino Uno, ESP32)',
+          'Abre el archivo platformio.ini para configurar',
+          'Escribe tu código en src/main.cpp y haz clic en Build'
+        ]
+      },
+      {
+        id: 'platformio-libraries',
+        title: 'Gestión de librerías',
+        content: 'Añade librerías a tu proyecto PlatformIO',
+        steps: [
+          'Abre la interfaz de PlatformIO en VS Code',
+          'Ve a Libraries y busca la librería deseada',
+          'Haz clic en Add to Project y selecciona tu proyecto',
+          'Incluye la librería con #include en tu código',
+          'Compila para verificar que todo funciona'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'fritzing',
+    name: 'Fritzing',
+    developer: 'Fritzing Community',
+    homepage: 'https://fritzing.org',
+    description:
+      'Fritzing es una herramienta de automatización de diseño electrónico de código abierto. Permite pasar de prototipos en protoboard a esquemáticos y diseños de PCB profesionales.',
+    category: 'electronics',
+    isProprietary: false,
+    alternatives: ['kicad', 'eagle'],
+    scoopBucket: 'extras',
+    scoopName: 'fritzing',
+    images: [
+      'https://images.unsplash.com/photo-1553406830-ef0e3f0c5c5d?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'fritzing-breadboard',
+        title: 'Prototipo en protoboard',
+        content: 'Diseña tu circuito en protoboard con Fritzing',
+        steps: [
+          'Abre Fritzing y selecciona la vista Protoboard',
+          'Arrastra componentes desde el panel derecho',
+          'Conecta los componentes usando cables virtuales',
+          'Cambia a la vista Esquemático para verificar conexiones',
+          'Exporta el diseño como imagen o PDF'
+        ]
+      },
+      {
+        id: 'fritzing-pcb',
+        title: 'Diseño de PCB',
+        content: 'Convierte tu prototipo en una placa PCB',
+        steps: [
+          'Cambia a la vista PCB en Fritzing',
+          'Organiza los componentes en el área de la placa',
+          'Dibuja las pistas con la herramienta de routing',
+          'Añade los textos y serigrafía necesarios',
+          'Genera los archivos Gerber para fabricación'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'simulide',
+    name: 'SimulIDE',
+    developer: 'SimulIDE Team',
+    homepage: 'https://simulide.com',
+    description:
+      'SimulIDE es un simulador de circuitos electrónicos en tiempo real. Ideal para aprender y prototipar circuitos con microcontroladores como Arduino sin necesidad de hardware físico.',
+    category: 'electronics',
+    isProprietary: false,
+    alternatives: ['proteus'],
+    images: [
+      'https://images.unsplash.com/photo-1517077302219-7eab0f5aa0a3?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'simulide-circuit',
+        title: 'Simular un circuito básico',
+        content: 'Crea y simula tu primer circuito en SimulIDE',
+        steps: [
+          'Descarga y abre SimulIDE',
+          'Arrastra una fuente de alimentación y un LED al área',
+          'Conecta los componentes con cables',
+          'Haz clic en el botón de inicio para ejecutar la simulación',
+          'Observa el LED encenderse y prueba cambiar valores'
+        ]
+      },
+      {
+        id: 'simulide-arduino',
+        title: 'Simular un Arduino',
+        content: 'Ejecuta un sketch de Arduino en SimulIDE',
+        steps: [
+          'Arrastra un Arduino Uno al área de trabajo',
+          'Añade un LED y una resistencia al circuito',
+          'Conecta el LED al pin 13 del Arduino',
+          'Carga un sketch .hex (Archivo > Cargar firmware)',
+          'Inicia la simulación y observa el comportamiento'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'putty',
+    name: 'PuTTY',
+    developer: 'Simon Tatham',
+    homepage: 'https://www.putty.org',
+    description:
+      'PuTTY es un cliente SSH, Telnet y serie gratuito y de código abierto. Esencial para comunicarse con microcontroladores, routers y dispositivos embebidos a través del puerto serie.',
+    category: 'electronics',
+    isProprietary: false,
+    alternatives: ['coolterm'],
+    scoopBucket: 'main',
+    scoopName: 'putty',
+    images: [
+      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'putty-serial',
+        title: 'Conexión serie con PuTTY',
+        content: 'Configura una conexión serie para comunicarte con tu microcontrolador',
+        steps: [
+          'Abre PuTTY y selecciona Serial como tipo de conexión',
+          'Introduce el puerto COM (Windows) o /dev/ttyUSB0 (Linux)',
+          'Configura la velocidad (9600 baudios por defecto)',
+          'Haz clic en Open para iniciar la conexión',
+          'Escribe comandos o recibe datos en la terminal'
+        ]
+      },
+      {
+        id: 'putty-ssh',
+        title: 'Conexión SSH',
+        content: 'Conéctate de forma segura a servidores remotos',
+        steps: [
+          'Abre PuTTY y selecciona SSH como tipo de conexión',
+          'Introduce la dirección IP o nombre de host',
+          'Especifica el puerto (22 por defecto)',
+          'Haz clic en Open y acepta la clave del servidor',
+          'Inicia sesión con tu nombre de usuario y contraseña'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'coolterm',
+    name: 'CoolTerm',
+    developer: 'Roger Meier',
+    homepage: 'https://freeware.the-meiers.org',
+    description:
+      'CoolTerm es un terminal serie gratuito y fácil de usar. Perfecto para comunicarse con microcontroladores, sensores y dispositivos IoT a través del puerto serie o Bluetooth.',
+    category: 'electronics',
+    isProprietary: false,
+    alternatives: ['putty'],
+    images: [
+      'https://images.unsplash.com/photo-1517077302219-7eab0f5aa0a3?w=800&q=80'
+    ],
+    tutorials: [
+      {
+        id: 'coolterm-serial',
+        title: 'Primeros pasos con CoolTerm',
+        content: 'Configura una conexión serie básica',
+        steps: [
+          'Descarga e instala CoolTerm desde freeware.the-meiers.org',
+          'Conecta tu dispositivo al puerto USB',
+          'Haz clic en Options y selecciona el puerto correcto',
+          'Configura la velocidad en baudios (9600)',
+          'Haz clic en Connect y empieza a recibir datos'
+        ]
+      },
+      {
+        id: 'coolterm-logging',
+        title: 'Registro de datos',
+        content: 'Guarda los datos serie en un archivo',
+        steps: [
+          'Conecta CoolTerm a tu dispositivo',
+          'Ve a Connection > Capture to Text/Binary File',
+          'Selecciona la ubicación y nombre del archivo',
+          'Los datos recibidos se guardarán automáticamente',
+          'Detén la captura con Connection > Disconnect'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'eagle',
+    name: 'Autodesk Eagle',
+    developer: 'Autodesk Inc.',
+    homepage: 'https://www.autodesk.com/products/eagle',
+    description:
+      'Eagle es un software de diseño de PCB con captura esquemática y enrutamiento automático. Popular entre aficionados y profesionales para diseño de circuitos impresos.',
+    category: 'electronics',
+    isProprietary: true,
+    alternatives: ['kicad', 'fritzing'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'altium',
+    name: 'Altium Designer',
+    developer: 'Altium Limited',
+    homepage: 'https://www.altium.com',
+    description:
+      'Altium Designer es un software profesional de diseño de PCB con captura esquemática, simulación y gestión avanzada de componentes para electrónica.',
+    category: 'electronics',
+    isProprietary: true,
+    alternatives: ['kicad', 'eagle'],
+    images: [],
+    tutorials: []
+  },
+  {
+    id: 'proteus',
+    name: 'Proteus',
+    developer: 'Labcenter Electronics',
+    homepage: 'https://www.labcenter.com',
+    description:
+      'Proteus es un software de simulación de circuitos y diseño de PCB. Incluye simulación de microcontroladores y periféricos en tiempo real para prototipado virtual.',
+    category: 'electronics',
+    isProprietary: true,
+    alternatives: ['simulide', 'kicad'],
+    images: [],
+    tutorials: []
   }
 ]
 export function getProgramLogo(program: Program): string | undefined {
@@ -1666,6 +1993,16 @@ const PROGRAM_LOGOS: Record<string, string> = {
   'dropbox': 'https://cdn.simpleicons.org/dropbox',
   'obs-studio': 'https://cdn.simpleicons.org/obsstudio',
   'virtualbox': 'https://cdn.simpleicons.org/virtualbox',
+  'kicad': 'https://cdn.simpleicons.org/kicad',
+  'arduino-ide': 'https://cdn.simpleicons.org/arduino',
+  'platformio': 'https://cdn.simpleicons.org/platformio',
+  'fritzing': 'https://cdn.simpleicons.org/fritzing',
+  'simulide': 'https://cdn.simpleicons.org/simulide',
+  'putty': 'https://cdn.simpleicons.org/putty',
+  'coolterm': 'https://cdn.simpleicons.org/coolterm',
+  'eagle': 'https://cdn.simpleicons.org/autodeskeagle',
+  'altium': 'https://cdn.simpleicons.org/altiumdesigner',
+  'proteus': 'https://cdn.simpleicons.org/proteus',
 }
 
 export const categories = [
@@ -1684,5 +2021,6 @@ export const categories = [
   { id: 'cloud-storage', name: 'Almacenamiento en la Nube' },
   { id: 'finance', name: 'Finanzas Personales' },
   { id: 'streaming', name: 'Streaming y Grabación' },
-  { id: 'virtualization', name: 'Virtualización' }
+  { id: 'virtualization', name: 'Virtualización' },
+  { id: 'electronics', name: 'Electrónica y Diseño' }
 ]
